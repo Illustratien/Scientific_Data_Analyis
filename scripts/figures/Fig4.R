@@ -22,7 +22,7 @@ nice_break <- function(range.vec,nbk,digit,include=T){
 }
 
 lsddf<- function(formu,dat){
-  datinfo <- dat %>% select(f2,factor,type,f1) %>% distinct()
+  datinfo <- dat %>% dplyr::select(f2,factor,type,f1) %>% distinct()
   
   resl <- aov(as.formula(formu),data=dat) %>%
     agricolae::LSD.test(.,"f1", group=TRUE)
@@ -45,7 +45,7 @@ dfun <- function(x){
     as.data.frame() %>% 
     arrange({{typ}}) %>% 
     `rownames<-`(.[[typ]]) %>% 
-    select(-all_of(c("type","R_type","f2",typ))) %>%  
+    dplyr::select(-all_of(c("type","R_type","f2",typ))) %>%  
     rbind(rep(.8,ncol(.)) , rep(0,ncol(.)) , .)
 }
 
@@ -57,7 +57,7 @@ names(col_pal) <- c("HN_NF_RF","HN_WF_RF","LN_NF_RF","LN_WF_RF")
 shp2 <- c(1,2)
 names(shp2) <- c("+","-")
 
-sdf <- R_raw %>% select(trait,sma_slope,sma_sig,R2,Rsign) %>% distinct() %>% 
+sdf <- R_raw %>% dplyr::select(trait,sma_slope,sma_sig,R2,Rsign) %>% distinct() %>% 
   filter(trait%in%tr_vec) %>% 
   mutate(trait=factor(trait,levels=tr_vec)) %>%
   group_by(trait) %>%

@@ -9,7 +9,7 @@ raw <- read.csv2("data/BRIWECS_data_publication.csv") %>%
   mutate(across(BBCH59:Protein_yield,as.numeric))
 # -------------------------------------------------------------------------
 s <- raw %>% 
-  select(Treatment,Year,Location) %>% 
+  dplyr::select(Treatment,Year,Location) %>% 
   tidyr::separate(Treatment,into=c("nitrogen\nfertilizer",
                                    "fungicide\napplication",
                                    "water\navailability")) %>% 
@@ -19,13 +19,13 @@ s <- raw %>%
            factor(.,levels=c("Phase II","Phase I")),
          Year=as.character(Year))
 
-tbla <-s %>% select(1:3) %>%
+tbla <-s %>% dplyr::select(1:3) %>%
   distinct() %>% 
   gridExtra::tableGrob(.,theme=gridExtra::ttheme_minimal(core = list(fg_params=list(cex = .70)),
                                                          colhead = list(fg_params=list(cex = .70)),
                                                          rowhead = list(fg_params=list(cex = .70)))) 
 s <- raw %>% 
-  select(Treatment,Year,Location) %>% 
+  dplyr::select(Treatment,Year,Location) %>% 
   tidyr::separate(Treatment,into=c("Nitrogen","Fungicide","Water_availability")) %>% 
   distinct() %>% 
   mutate(phase=case_when(Year<2018~"Phase I",

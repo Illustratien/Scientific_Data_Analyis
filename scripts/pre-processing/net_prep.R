@@ -70,7 +70,7 @@ stable_table <-
 
 # # reorder the column based on the order of first trait then SI
 stable_table <- stable_table %>% 
-  select(matches("^[^MP]"), starts_with("M"), starts_with("P")) %>% 
+  dplyr::select(matches("^[^MP]"), starts_with("M"), starts_with("P")) %>% 
   rename_with(~gsub("Mean.","",.x),starts_with("Mean"))
 # -------------------------------------------------------------------------
 thresh <- 0# not applying threshold

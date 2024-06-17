@@ -27,18 +27,11 @@ options(dplyr.summarise.inform = FALSE)
 
 ## Reproducible analysis
 
-
-::: panel-tabset
-[![Analysis-workflow](https://img.shields.io/badge/Analysis-workflow-darkorange)](https://github.com/Illustratien/Scientific_Data_Analyis)
-
-[![Github Repository](https://github.com/Illustratien/Scientific_Data_Analyis/blob/master/README_files/figure-gfm/unnamed-chunk-1-1.png){#fig-kai .lightbox width="160" height="220"}](https://github.com/Illustratien/Scientific_Data_Analyis)
-:::
-
 ## insturctution
 
 1.  open `Scientific_Data_Analysis.RProject`
 2.  open `scripts/run.R`
-3.  run all `Ctrl + Alt + R` ![](https://github.com/tillrose/BRIWECS_Data_Publication/blob/main/figure/Instruction.PNG){fig-align="center"}
+3.  run all `Ctrl + Alt + R` 
 
 ## directory tree
 

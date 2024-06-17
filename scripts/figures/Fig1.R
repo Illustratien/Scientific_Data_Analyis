@@ -60,7 +60,7 @@ usd <- USDA_text %>% filter(Label%in%c('Sandy Loam','Sand','Silt Loam')) %>%
   mutate(soiltype=c('Sandy loam','Sand','Silty loam'))
 
 soil <- bind_rows(soil %>% filter(!is.na(Sand)) ,
-                  soil %>% filter(is.na(Sand)) %>% select(-c(Clay:Sand)) %>% 
+                  soil %>% filter(is.na(Sand)) %>% dplyr::select(-c(Clay:Sand)) %>% 
                     left_join(.,usd,"soiltype")
 )
 # -------------------------------------------------------------------------
@@ -76,11 +76,11 @@ process_data <- function(df) {
         }else{
           yf <- yf%>% paste(.,collapse="-")
         }
-        dff[1,] %>% select(Location,Clay,Silt,Sand) %>% mutate(g=paste(Location,yf),
+        dff[1,] %>% dplyr::select(Location,Clay,Silt,Sand) %>% mutate(g=paste(Location,yf),
                                                                year=yf)
       }else{
         yf <- dff$Year %>% substr(start = 3,stop = 4) 
-        dff[1,] %>% select(Location,Clay,Silt,Sand) %>% mutate(g=paste(Location,yf),
+        dff[1,] %>% dplyr::select(Location,Clay,Silt,Sand) %>% mutate(g=paste(Location,yf),
                                                                year=yf)
         
       }
@@ -89,7 +89,7 @@ process_data <- function(df) {
 }
 # ternary plot based on USDA standard -------------------------------------------------------------------------
 #What was recorded in file about the soil type 
-styp <- soil %>% group_by(Location) %>% select(Location,soiltype) %>% distinct()
+styp <- soil %>% group_by(Location) %>% dplyr::select(Location,soiltype) %>% distinct()
 # check with plot using three ratio 
 db <- soil %>%process_data() %>% 
   mutate(across(Clay:Sand,as.numeric)) %>% 

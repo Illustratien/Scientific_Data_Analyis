@@ -1,15 +1,19 @@
 # install necessary packages
 
-# combined raw data and remove outlier
+dir.create("output",showWarnings = FALSE)
+dir.create("figure",showWarnings = FALSE)
+# calculate BLUEs
 source(file.path("scripts/pre-processing","BLUEs.R"))
-# combined management files
+# calculate Breeding progress
 source(file.path("scripts/pre-processing","BP.R"))
-# visualization and overview
+# calculate consistency
 source(file.path("scripts/pre-processing","R2sma.R"))
 
+# generate figures
+figure.path <- 'scripts/figures'
+eachfig <- list.files(figure.path)
+for(i in eachfig){
+  figure.path <- 'scripts/figures'
+  source(file.path(figure.path,i))
+}
 
-#4
-source(file.path("scripts/figure","R2sma_groupping.R"))
-
-#7
-source(file.path("scripts/figure","BP_plot.R"))

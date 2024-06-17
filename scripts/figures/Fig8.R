@@ -30,7 +30,7 @@ Si_reg <-  data.frame(explain=out$lmg) %>%
          nobs=nrow(na.omit(s_window))
   )
 # check colinearity
-PerformanceAnalytics::chart.Correlation(s_window %>% select(Grain_per_spike_bio:TGW))
+PerformanceAnalytics::chart.Correlation(s_window %>% dplyr::select(Grain_per_spike_bio:TGW))
 
 # # subgroup -------------------------------------------------------------------------
 env_ref <- c("Treatment","Location","Year")
@@ -39,9 +39,6 @@ BP_regg<-
   map_dfr(env_ref,function(envec){
     
     subdat <- BP_wide %>%
-      # dplyr::select(Seedyield,TGW,Harvest_Index_bio,Straw,
-      #               Grain_per_spike_bio,Spike_number_bio
-      # )%>% 
       split(.,BP_wide[[envec]])
     
     imap_dfr(subdat,function(edata,elevel){
@@ -137,16 +134,12 @@ tiff(filename="figure/Fig8.tiff",
      family="Arial")
 p
 dev.off()
-# p
+
 # coef -------------------------------------------------------------------------
 BP_coef<-  
   map_dfr(env_ref,function(envec){
     
     subdat <- BP_wide %>%
-      # dplyr::select(Seedyield,TGW,Harvest_Index_bio,Straw,
-      #               Grain_per_spike_bio,Spike_number_bio
-      #               # tinfect
-      #               )%>% 
       split(.,BP_wide[[envec]])
     
     imap_dfr(subdat,function(edata,elevel){
@@ -198,69 +191,5 @@ tbla <- BP_coef %>%
 grid::grid.draw(tbla)
 
 
-# tiff(filename="figure/Fig8.tiff",
-#      type="cairo",
-#      units="cm",
-#      compression = "lzw",
-#      width=18,
-#      height=24,
-#      pointsize=12,
-#      res=600,# dpi,
-#      family="Arial")
-# cowplot::plot_grid(tbla, p, nrow = 2,rel_widths =  c(1, 1),labels = "AUTO")
-# 
-# dev.off()
-
-# -------------------------------------------------------------------------
-# BP_coef<-  
-#   map_dfr(env_ref,function(envec){
-#     
-#     subdat <- BP_wide %>%
-#       dplyr::select(Seedyield,TGW,Harvest_Index_bio,Straw,
-#                     Grain_per_spike_bio,Spike_number_bio
-#                     # ,tinfect
-#                     )%>% 
-#       split(.,BP_wide[[envec]])
-#     
-#     imap_dfr(subdat,function(edata,elevel){
-#       fit3 <- lm(
-#         Seedyield~TGW+Harvest_Index_bio+Straw+
-#           Grain_per_spike_bio+Spike_number_bio, data=na.omit(edata)) 
-#       
-#       data.frame(coef=coef(fit3)) %>% 
-#         tibble::rownames_to_column("Trait") %>% 
-#         mutate( 
-#           coef=paste(toolPhD::round_scale(coef),
-#                      toolPhD::sig_pvalue(summary(fit3)$coefficients[,4])),
-#           egp=envec,
-#           el=elevel,
-#           nobs=nrow(na.omit(edata))
-#         )
-#     })
-#     
-#   }) %>% filter(nobs>6)
-# 
-# 
-# tbla <- BP_coef %>%
-#   rbind(data.frame(coef=coef(fit)) %>% 
-#           tibble::rownames_to_column("Trait") %>% 
-#           mutate( 
-#             coef=paste(toolPhD::round_scale(coef),
-#                        toolPhD::sig_pvalue(summary(fit)$coefficients[,4])),
-#             egp="all",
-#             el="all",
-#             nobs=nrow(na.omit(s_window))
-#           )) %>% 
-#   dplyr::select(-nobs,-egp) %>%
-#   tidyr::pivot_wider(values_from = coef,names_from = el) %>% 
-#   mutate(Trait=case_when(Trait=='Crude_protein'~'GP',
-#                          Trait=='Seedyield'~'GY',
-#                          Trait=='Harvest_Index_bio'~"HI",
-#                          Trait=='Grain_per_spike_bio'~'GpS',
-#                          Trait=='Spike_number_bio'~'SN',
-#                          T~Trait)) %>%
-#   
-#   arrange(Trait) %>%
-#   mutate(Trait=paste0("BP[",Trait,"]"))
 xlsx::write.xlsx(tbla, "output/Table.xlsx",append=T,
                  sheetName = "BP")

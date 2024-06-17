@@ -11,7 +11,7 @@ abv <- c("FT","Straw","GN","GY","MT","LAI","HI","GP","TGW",'k','rue')
 ltb<- data.frame(apsim_trait,bri_trait,id=1:length(apsim_trait),abv)
 
 apsim <-  xlsx::read.xlsx("data/APSIM_network.xlsx",sheetIndex = 1) %>% 
-  select(from:r)%>% filter(group%in%c("TP","TT"))  
+  dplyr::select(from:r)%>% filter(group%in%c("TP","TT"))  
 
 lk<- function(vec,coln,df){
   df$id[match(vec,df[[coln]])]
@@ -21,7 +21,7 @@ lk<- function(vec,coln,df){
 ord <- function(df){
   df %>% rowwise() %>%
     mutate(f=min(from,to),t=max(from,to)) %>% 
-    select(-c(from,to))
+    dplyr::select(-c(from,to))
 }
 
 
@@ -33,7 +33,7 @@ lkr<- function(vec,coln,df){
 apsim_df <-  apsim %>% filter(group%in%c("TT",'TP'),
                               from%in%apsim_trait&to%in%apsim_trait) %>%
   mutate(across(from:to,function(x){lk(x,"apsim_trait",ltb)})) %>%
-  select(-group) %>%
+  dplyr::select(-group) %>%
   rename(r_apsim=r) %>% ord() %>% as_tibble()
 
 
@@ -50,7 +50,7 @@ trt.list<- read.csv("data/network_link.csv")%>%
         vnam <- paste0('r_',.x$Location[1]) %>% quo_name()
         .x %>% 
           mutate(across(from:to,function(x){lk(x,"bri_trait",ltb)}))%>%
-          rename(!!vnam:=r) %>% ord() %>% select(-c(Treatment,Location))
+          rename(!!vnam:=r) %>% ord() %>% dplyr::select(-c(Treatment,Location))
       })
     tt[[length(tt)+1]] <- apsim_df
     
@@ -129,28 +129,28 @@ tiff(filename="figure/Fig6.tiff",
 egg::tag_facet(p,open = "",close = "",tag_pool = LETTERS[1:2])
 dev.off()
 # table -------------------------------------------------------------------------
-
-pair_filter<- function(a,b){
-  vec <- c(paste(a,b,sep="-"),
-           paste(b,a,sep="-")
-  )
-  ipnutdf %>% 
-    filter(s%in%vec) %>% 
-    arrange(r_name,abs(r_value),rmse)
-}
-pair_filter("GY","GN")
-pair_filter("GY","GP")
-pair_filter("TGW","GN")
-pair_filter("Straw","GY")
-pair_filter("HI","GY")
-pair_filter("Straw","GY")
-pair_filter("HI","GN")
-pair_filter("GP","Straw")
-
-
-rs<- ipnutdf %>% 
-  filter(abs(r_value)>.4) %>% 
-  arrange(r_name,abs(r_value),rmse)
-rs<- ipnutdf %>% 
-  filter(abs(r_apsim)>.5) %>% 
-  arrange(r_name,abs(r_value),rmse)
+# 
+# pair_filter<- function(a,b){
+#   vec <- c(paste(a,b,sep="-"),
+#            paste(b,a,sep="-")
+#   )
+#   ipnutdf %>% 
+#     filter(s%in%vec) %>% 
+#     arrange(r_name,abs(r_value),rmse)
+# }
+# pair_filter("GY","GN")
+# pair_filter("GY","GP")
+# pair_filter("TGW","GN")
+# pair_filter("Straw","GY")
+# pair_filter("HI","GY")
+# pair_filter("Straw","GY")
+# pair_filter("HI","GN")
+# pair_filter("GP","Straw")
+# 
+# 
+# rs<- ipnutdf %>% 
+#   filter(abs(r_value)>.4) %>% 
+#   arrange(r_name,abs(r_value),rmse)
+# rs<- ipnutdf %>% 
+#   filter(abs(r_apsim)>.5) %>% 
+#   arrange(r_name,abs(r_value),rmse)

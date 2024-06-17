@@ -77,7 +77,7 @@ orderid<- s_window_statistic %>%
   distinct() %>% 
   mutate(cv=as.numeric(cv)) %>% 
   arrange(desc(cv))%>%
-  select(abbrev) %>% 
+  dplyr::select(abbrev) %>% 
   mutate(letter=letters[1:n()])
 # levels(sdf$abbrev)
 # sdf$unit %>% unique()

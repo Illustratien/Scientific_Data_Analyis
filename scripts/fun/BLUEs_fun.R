@@ -29,7 +29,7 @@ combiname <- function(x){
   # find name of trt combination
   x %>%
     ungroup() %>% 
-    select(Location,Treatment,Year,trait) %>% 
+    dplyr::select(Location,Treatment,Year,trait) %>% 
     .[1,] %>%unlist() %>%
     paste(.,collapse = "_")
 } 

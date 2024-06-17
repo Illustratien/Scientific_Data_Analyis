@@ -7,7 +7,7 @@ R_raws <- R_raw%>%
   tidyr::separate("combi",c("F1","F2"),sep="\n",)%>% 
   filter( R_type=="R2_sma")
 un <- xlsx::read.xlsx("data/Unit.xlsx",sheetIndex = 1) %>% 
-select(trait,abbrev)
+dplyr::select(trait,abbrev)
 # -------------------------------------------------------------------------
 fillpalette <- viridis::viridis(3)
 names(fillpalette) <- c("HN_WF_RF","HN_NF_RF","LN_NF_RF")

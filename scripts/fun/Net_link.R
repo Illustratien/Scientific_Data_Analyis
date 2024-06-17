@@ -59,7 +59,7 @@ Net_link<- function(node0,
   SI=case_when(grepl("21",SI)~"12",
                T~SI#stay the same if not match
   )
-  )%>%select(-c(fl,tl,fs,ts))
+  )%>%dplyr::select(-c(fl,tl,fs,ts))
   
   return(sub.link)
 }
