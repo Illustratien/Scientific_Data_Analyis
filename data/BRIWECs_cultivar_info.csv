@@ -1,0 +1,229 @@
+"BRISONr","genotype","baking_qulaity","country","breeder","breeding_progress","phaseI","phaseII","RYear"
+"BRISONr_1","Einstein","B","GB","Nickerson/Limagrain",TRUE,TRUE,FALSE,2004
+"BRISONr_10","Gordian","B","DE","Syngenta Seeds",TRUE,TRUE,FALSE,2013
+"BRISONr_100","Kerubino","E","DE","Saatzucht Schmid Landau",TRUE,TRUE,FALSE,2004
+"BRISONr_101","Arktis","E","DE","DSV",TRUE,TRUE,FALSE,2010
+"BRISONr_102","Urban","E","DE","Bauer, G.",TRUE,TRUE,TRUE,1980
+"BRISONr_103","Orestis","B","DE","Strube, Dr. H.",TRUE,TRUE,FALSE,1988
+"BRISONr_104","Flair","B","DE","Schweiger",TRUE,TRUE,TRUE,1996
+"BRISONr_105","Anthus","B","DE","KWS Lochow GmbH",TRUE,TRUE,FALSE,2005
+"BRISONr_106","Bombus","C","DE","Secobra Recherches",TRUE,TRUE,FALSE,2012
+"BRISONr_107","Lucius","A","DE","Secobra Recherches",TRUE,TRUE,FALSE,2006
+"BRISONr_108","Herzog","A","DE","Saatzucht Breun",TRUE,TRUE,FALSE,1986
+"BRISONr_109","Sorbas","B","DE","Strube, Dr. H.",TRUE,TRUE,FALSE,1985
+"BRISONr_11","Mentor","B","DE","RAGT/Mellinger",TRUE,TRUE,FALSE,2012
+"BRISONr_110","Tabor","A","DE","Strube",TRUE,TRUE,TRUE,1979
+"BRISONr_111","Terrier","B","DE","Nickerson",TRUE,TRUE,FALSE,2001
+"BRISONr_112","Magister","E","DE","Bauer",TRUE,TRUE,FALSE,2005
+"BRISONr_113","Altos","E","DE","Syngenta Hadmersleben",TRUE,TRUE,FALSE,2000
+"BRISONr_114","Progress","A","DE","Hege",TRUE,TRUE,TRUE,1969
+"BRISONr_115","Xanthippe","Ck","DE","Sejet Planteforaedling I/S",TRUE,TRUE,FALSE,2011
+"BRISONr_116","Avenir","A","DE","Saatzucht Josef Breun",TRUE,TRUE,FALSE,2013
+"BRISONr_117","Pantus","A","DE","Streng",TRUE,TRUE,FALSE,1966
+"BRISONr_118","Drifter","B","DE","Nickerson",TRUE,TRUE,TRUE,1999
+"BRISONr_119","Joss","C","DE","Breustedt",TRUE,TRUE,FALSE,1972
+"BRISONr_12","Meister","A","DE","RAGT/Mellinger",TRUE,TRUE,FALSE,2010
+"BRISONr_120","Kranich","A","DE","Lochow-Petkus",TRUE,TRUE,FALSE,1969
+"BRISONr_121","Sperber","A","DE","Lochow-Petkus",TRUE,TRUE,TRUE,1982
+"BRISONr_122","Discus","A","DE","Pflanzenzucht SaKa GmbH&Co.KG",TRUE,TRUE,FALSE,2007
+"BRISONr_123","Helios",NA,"DE","Saatzucht Schweiger",FALSE,TRUE,FALSE,1980
+"BRISONr_124","Obelisk","B","NE, DE","Strube, Dr. H.",TRUE,TRUE,TRUE,1987
+"BRISONr_125","Magnus","A","DE","Engelen Buechling",TRUE,TRUE,FALSE,2000
+"BRISONr_126","Disponent","A","DE","Bayrische Saatzuchtgesellschaft",TRUE,TRUE,TRUE,1975
+"BRISONr_127","Tambor","A","DE","Semundo",TRUE,TRUE,FALSE,1993
+"BRISONr_128","Boxer","C","DE","Ackermann Saatzucht",TRUE,TRUE,FALSE,2013
+"BRISONr_129","Sokrates","A","DE","Saatzucht Engelen",TRUE,TRUE,FALSE,2001
+"BRISONr_13","KWS Santiago","C","GB","KWS Lochow",TRUE,TRUE,FALSE,2011
+"BRISONr_130","Carisuper","A","DE","Heidenreich und Eger",TRUE,TRUE,FALSE,1975
+"BRISONr_131","Rektor","E","DE","Firlbeck",TRUE,TRUE,TRUE,1980
+"BRISONr_132","Alves","A","DE","SW Seeds",TRUE,TRUE,FALSE,2010
+"BRISONr_133","NaturaStar","A","DE","Saatzucht Schweiger",TRUE,TRUE,FALSE,2002
+"BRISONr_134","Alidos","E","DE","Saatzucht Hadmersleben",TRUE,TRUE,TRUE,1987
+"BRISONr_135","Monopol","E","DE","Firlbeck",TRUE,TRUE,TRUE,1975
+"BRISONr_136","Akratos","A","DE","Strube Saatzucht",TRUE,TRUE,FALSE,2004
+"BRISONr_137","Knirps","B",NA,"Semundo",TRUE,TRUE,FALSE,1985
+"BRISONr_138","Bussard","E","DE","Lochow-Petkus",TRUE,TRUE,TRUE,1990
+"BRISONr_139","Oberst","A","DE","Engelen Buechling",TRUE,TRUE,FALSE,1980
+"BRISONr_14","Brigand","BISC, D","GB","Plant Breeding International Cambridge",FALSE,TRUE,FALSE,1979
+"BRISONr_140","Cappelle Desprez","B","FR, CHL, GB, NL","SAS Florimond Desprez",FALSE,TRUE,FALSE,NA
+"BRISONr_141","Tiger","A","DE","Franck",TRUE,TRUE,FALSE,2001
+"BRISONr_142","Ibis","A","DE","Lochow-Petkus",TRUE,TRUE,FALSE,1991
+"BRISONr_143","Batis","A","DE","Strube, Dr. H.",TRUE,TRUE,TRUE,1994
+"BRISONr_144","Topfit","B","DE","Strube, Dr. H.",TRUE,TRUE,FALSE,1972
+"BRISONr_145","Akteur","E","DE","DSV",TRUE,TRUE,TRUE,2003
+"BRISONr_146","Ludwig","A","DE","Franck",TRUE,TRUE,FALSE,1998
+"BRISONr_147","Asketis","A","DE","Strube, Dr. H.",TRUE,TRUE,FALSE,1998
+"BRISONr_148","Aristos","A","DE","Strube, Dr. H.",TRUE,TRUE,FALSE,1997
+"BRISONr_149","Zentos","E","DE","Saatzucht Hadmersleben",TRUE,TRUE,FALSE,1989
+"BRISONr_15","Profilus","A","DE","RAGT/Mellinger",TRUE,TRUE,FALSE,2008
+"BRISONr_150","Diplomat","A","DE","Firlbeck",TRUE,TRUE,TRUE,1966
+"BRISONr_151","Astron","A","DE","Strube, Dr. H.",TRUE,TRUE,FALSE,1989
+"BRISONr_152","Basalt","B","DE","Hege, H.-U.",TRUE,TRUE,FALSE,1980
+"BRISONr_153","Kormoran","A","DE","Lochow-Petkus",TRUE,TRUE,TRUE,1973
+"BRISONr_154","Aron","E","DE","Semundo",TRUE,TRUE,FALSE,1992
+"BRISONr_155","KWS Milaneco","E","DE","KWS LOCHOW GMBH",TRUE,TRUE,FALSE,2013
+"BRISONr_156","Aszita","B","DE","Getreidezüchtung Peter Kunz",TRUE,TRUE,FALSE,2005
+"BRISONr_157","Kobold","B","DE","Firlbeck",TRUE,TRUE,FALSE,1978
+"BRISONr_158","Carimulti","B","DE","Heidenreich und Eger",TRUE,TRUE,TRUE,1975
+"BRISONr_159","Admiral","A","DE","Firlbeck",TRUE,TRUE,FALSE,1968
+"BRISONr_16","Durin",NA,"FR",NA,FALSE,TRUE,FALSE,NA
+"BRISONr_160","Vuka","A","DE","Franck",TRUE,TRUE,TRUE,1975
+"BRISONr_161","Benno","E","DE","Bauer, G.",TRUE,TRUE,FALSE,1973
+"BRISONr_162","Apollo","C","DE","Saatzucht Breun",TRUE,TRUE,TRUE,1984
+"BRISONr_163","Aquila","B3","EU","Nickerson",TRUE,TRUE,FALSE,1979
+"BRISONr_164","Kanzler","B","DE","Engelen Buechling",TRUE,TRUE,TRUE,1980
+"BRISONr_165","Kraka","A","DE","Petersen, A.S.",TRUE,TRUE,FALSE,1982
+"BRISONr_166","Caribo","B","DE","Heidenreich und Eger",TRUE,TRUE,TRUE,1968
+"BRISONr_167","Butaro","E","DE","LandbauschuleDottenfelderhof e.V./Spieß",TRUE,TRUE,FALSE,2009
+"BRISONr_168","Konsul","B","DE","Svaloef Weibull",TRUE,TRUE,FALSE,1990
+"BRISONr_169","Ares","B","DE","Strube, Dr. H.",TRUE,TRUE,TRUE,1983
+"BRISONr_17","KWS Pius","A","DE","KWS Lochow",TRUE,TRUE,FALSE,2010
+"BRISONr_170","Centurk","exot","USA","Nebraska Agricultural Experiment Station, USDA-ARS",FALSE,TRUE,FALSE,1971
+"BRISONr_171","NS 22/92",NA,"SRB",NA,FALSE,TRUE,FALSE,NA
+"BRISONr_172","Benni multifloret","exot","USA","Purdue University Agricultural Experiment Station",FALSE,TRUE,FALSE,1980
+"BRISONr_173","Hope",NA,"USA","S.Dakota Agricultural Experiment Station",FALSE,TRUE,FALSE,NA
+"BRISONr_174","Vel",NA,"USA",NA,FALSE,TRUE,FALSE,NA
+"BRISONr_175","Phoenix","exot","AUS, USA","Agricultural Research Institute, Wagga Wagga",FALSE,TRUE,FALSE,1981
+"BRISONr_176","Mironovska 808","exot","UKR","Mironovskii institut selektsii i semenovodstva pshenitsy",FALSE,TRUE,TRUE,1963
+"BRISONr_177","Caphorn",NA,"FR","RAGT 2 n",TRUE,TRUE,FALSE,2000
+"BRISONr_178","Cordiale",NA,"GB","KWS UK Limited",TRUE,TRUE,FALSE,2003
+"BRISONr_179","Apache","A","CZ"," Nickerson>Limagrain",TRUE,TRUE,FALSE,1997
+"BRISONr_18","Paroli","A","DE","DSV",TRUE,TRUE,FALSE,2004
+"BRISONr_180","Premio","B","FR"," RAGT",TRUE,TRUE,FALSE,2006
+"BRISONr_181","Isengrain","B","EU","Florimond Desprez, WvB, Witt",TRUE,TRUE,FALSE,1996
+"BRISONr_182","Alixan","A","FR","Limagrain",TRUE,TRUE,FALSE,2005
+"BRISONr_183","Boregar","A7 ","FR","RAGT 2 n",TRUE,TRUE,FALSE,2007
+"BRISONr_184","Renesansa","A2-A1","SRB","Institute of Field and Vegetable Crops, Novi Sad",FALSE,TRUE,FALSE,1995
+"BRISONr_185","Tremie",NA,"EU","Serasem>RAGT",TRUE,TRUE,FALSE,1991
+"BRISONr_186","KWS Ferrum","B","DE","KWS LOCHOW GMBH ",TRUE,TRUE,FALSE,2012
+"BRISONr_187","Triple Dirk ""S""",NA,"AUS","Instituto Nacional de Investigaciones Agricolas",FALSE,TRUE,FALSE,NA
+"BRISONr_188","Cardos","A","DE","Saatzucht Hadmersleben",TRUE,TRUE,TRUE,1998
+"BRISONr_189","Soissons","B/A ","EU","Florimond Desprez",TRUE,TRUE,FALSE,1987
+"BRISONr_19","Estivus","A","DE","Strube Saatzucht",TRUE,TRUE,FALSE,2012
+"BRISONr_190","BCD 1302/83",NA,"MD","Goertzen Seed Research, Westbred?",FALSE,TRUE,FALSE,NA
+"BRISONr_191","Arlequin",NA,"FR","Limagrain Verneuil Holding",TRUE,TRUE,FALSE,2007
+"BRISONr_192","Sonalika","exot","IND","Indian Agricultural Research Institute IARI",FALSE,TRUE,FALSE,1967
+"BRISONr_193","Camp Remy","B","DE","Unisigma",TRUE,TRUE,FALSE,1980
+"BRISONr_194","Cajeme 71","exot","MEX","CIMMYT",FALSE,TRUE,FALSE,1971
+"BRISONr_195","Avalon","B/Gd","GB","Plant Breeding International Cambridge PBIC",FALSE,TRUE,FALSE,1980
+"BRISONr_196","Ivanka","B","SRB","Institute of Field and Vegetable Crops, Novi Sad",TRUE,TRUE,FALSE,1998
+"BRISONr_197","Pobeda","A1-A2","SRB","Institute of Field and Vegetable Crops, Novi Sad",FALSE,TRUE,FALSE,1990
+"BRISONr_198","NS 66/92",NA,"SRB",NA,FALSE,TRUE,FALSE,NA
+"BRISONr_199","Mexico 3",NA,"MEX","BAZ, Braunschweig Genetic Resources Centre",FALSE,TRUE,FALSE,NA
+"BRISONr_2","Oakley","C","UK,BE","KWS UK Limited",TRUE,TRUE,FALSE,2008
+"BRISONr_20","Kronjuwel","B","DE","Bayrische Saatzuchtgesellschaft",TRUE,TRUE,TRUE,1980
+"BRISONr_200","Orcas","B","DE","Secobra Recherches",TRUE,TRUE,FALSE,2010
+"BRISONr_201","Nimbus","B","DE","Firlbeck",TRUE,TRUE,FALSE,1975
+"BRISONr_202","Muskat","C","DE","DSV",TRUE,TRUE,FALSE,2010
+"BRISONr_203","Florida",NA,"USA",NA,FALSE,TRUE,FALSE,1986
+"BRISONr_204","Rumor","B","DE","Dr. Hermann Strube",TRUE,TRUE,FALSE,2013
+"BRISONr_205","Highbury","A","GB","Plant Breeding International Cambridge (PBIC)",FALSE,TRUE,TRUE,1968
+"BRISONr_206","Siete Cerros","exot","MEX","Instituto Nacional de Investigaciones Agricolas, CIMMYT",FALSE,TRUE,FALSE,1966
+"BRISONr_207","Kontrast","A","DE","Saatzucht Hadmersleben",TRUE,TRUE,TRUE,1990
+"BRISONr_208","WW 4180",NA,"DE","Saatzucht Josef Breun",TRUE,TRUE,FALSE,2012
+"BRISONr_209","INTRO 615",NA,"USA",NA,FALSE,TRUE,FALSE,NA
+"BRISONr_21","Desamo","B","DE","Syngenta Seeds",TRUE,TRUE,FALSE,2013
+"BRISONr_210","NS 46/90",NA,"SRB",NA,FALSE,TRUE,FALSE,NA
+"BRISONr_211","Mex. 17 bb",NA,"MEX","CYMMIT",FALSE,TRUE,FALSE,NA
+"BRISONr_212","Labriego-Inia",NA,"CHL","INIA Chillan",FALSE,TRUE,FALSE,1980
+"BRISONr_213","Pegassos","A","EU","Strube Saatzucht",TRUE,TRUE,TRUE,1994
+"BRISONr_214","Hybred","B","EU","Nordsaat",TRUE,TRUE,FALSE,2003
+"BRISONr_215","Hyland","B","DE,HU","Nordsaat",TRUE,TRUE,FALSE,2009
+"BRISONr_216","Hybery","B","FR","Saaten Union Recherche",TRUE,TRUE,FALSE,2010
+"BRISONr_217","Hystar","B","FR","Saaten Union Recherche",TRUE,TRUE,FALSE,2007
+"BRISONr_218","Hylux","B","FR","Saaten Union Recherche / Estrées St Denis",TRUE,TRUE,FALSE,2012
+"BRISONr_219","Piko","B","DE","NORDSAAT",TRUE,TRUE,FALSE,1994
+"BRISONr_22","Carenius","B","DE","Eger/Dieckmann (EU)",TRUE,TRUE,FALSE,2006
+"BRISONr_220","SUR 99820",NA,"FR","Saaten Union Recherche SAS ?",FALSE,TRUE,FALSE,NA
+"BRISONr_23","Mulan","B","DE","Nordsaat Saatzucht",TRUE,TRUE,FALSE,2006
+"BRISONr_24","Kredo","B","DE","Nordsaat Saatzucht",TRUE,TRUE,FALSE,2009
+"BRISONr_25","Nelson","E","DE","Saatzucht Schweiger",TRUE,TRUE,FALSE,2011
+"BRISONr_26","Patras","A","DE","DSV",TRUE,TRUE,TRUE,2012
+"BRISONr_27","Götz","B","DE","Bayrische Saatzuchtgesellschaft",TRUE,TRUE,TRUE,1978
+"BRISONr_28","Robigus","Bk","GB","KWS UK Limited, CPB Twyford Ltd",TRUE,TRUE,FALSE,2004
+"BRISONr_29","Anapolis","C","DE","NORDSAAT Saatzuchtgesellschaft",TRUE,TRUE,FALSE,2013
+"BRISONr_3","Jafet","E","DE","Sandra Senghaas-Kirschenlohr",TRUE,TRUE,FALSE,2008
+"BRISONr_30","Solstice",NA,"GB","Limagrain UK Ltd",TRUE,TRUE,FALSE,2001
+"BRISONr_31","Biscay","C","DE","Lochow-Petkus",TRUE,TRUE,TRUE,2000
+"BRISONr_32","Capone","A","DE","LIMAGRAIN GmbH",TRUE,TRUE,FALSE,2012
+"BRISONr_33","Tabasco","C","DE","v. Borris-Eckendorf",TRUE,TRUE,FALSE,2008
+"BRISONr_34","Kometus","A","DE","Saatzucht Schweiger",TRUE,TRUE,FALSE,2011
+"BRISONr_35","Cubus","A","DE","Lochow-Petkus",TRUE,TRUE,FALSE,2002
+"BRISONr_36","Edward","B","DE","W. von Borries-Eckendorf",TRUE,TRUE,FALSE,2013
+"BRISONr_37","Famulus","E","DE","DSV",TRUE,TRUE,FALSE,2010
+"BRISONr_38","Dekan","B","DE","Lochow-Petkus",TRUE,TRUE,TRUE,1999
+"BRISONr_39","SW Topper","E",NA,"SW Seeds",TRUE,TRUE,FALSE,2002
+"BRISONr_4","Claire","C","IE,UK","Nickerson",TRUE,TRUE,FALSE,1999
+"BRISONr_40","Matrix","B","DE","DSV",TRUE,TRUE,FALSE,2010
+"BRISONr_41","Jenga","A","DE","Ackermann Saatzucht",TRUE,TRUE,FALSE,2007
+"BRISONr_42","Linus","A","DE","RAGT/Mellinger",TRUE,TRUE,FALSE,2010
+"BRISONr_43","TJB 990-15","BISC, D","GB","Plant Breeding International Cambridge (PBIC)",FALSE,TRUE,FALSE,1980
+"BRISONr_44","Forum","A","EU","Nordsaat Saatzucht",TRUE,TRUE,FALSE,2012
+"BRISONr_45","Colonia","B","EU","LIMAGRAIN GmbH",TRUE,TRUE,FALSE,2011
+"BRISONr_46","Transit","A","DE","Saatzucht Josef Breun",TRUE,TRUE,FALSE,1994
+"BRISONr_47","Potenzial","A","DE","DSV",TRUE,TRUE,TRUE,2006
+"BRISONr_48","Gaucho",NA,"USA","USDA-ARS, Oklahoma AES",TRUE,TRUE,FALSE,1993
+"BRISONr_49","Tarso","A","DE","Saatzucht Hadmersleben",TRUE,TRUE,FALSE,1992
+"BRISONr_5","Rebell","A","DE","RAGT ",TRUE,TRUE,FALSE,2013
+"BRISONr_50","Hermann","Ck","DE","Limagrain-Nickerson",TRUE,TRUE,TRUE,2004
+"BRISONr_51","Glaucus","A","DE","Strube Saatzucht",TRUE,TRUE,FALSE,2011
+"BRISONr_52","Tuareg","A","DE","Nordsaat Saatzucht",TRUE,TRUE,FALSE,2005
+"BRISONr_53","Atomic","A","DE","LIMAGRAIN GmbH",TRUE,TRUE,FALSE,2012
+"BRISONr_54","Tobak","B","DE","W.v.Borries-Eckendorf",TRUE,TRUE,TRUE,2011
+"BRISONr_55","Pionier","A","DE","Deutsche Saatveredelung",TRUE,TRUE,FALSE,2013
+"BRISONr_56","Manager","B","DE","Saatzucht Schweiger GbR",TRUE,TRUE,TRUE,2006
+"BRISONr_57","Gourmet","E","DE","Secobra Recherches",TRUE,TRUE,FALSE,2013
+"BRISONr_58","Limes","B","DE","Innoseeds",TRUE,TRUE,FALSE,2003
+"BRISONr_59","Ritmo","B","DE","Cebeco",TRUE,TRUE,TRUE,1993
+"BRISONr_6","Memory","B","DE","Secobra Recherches",TRUE,TRUE,FALSE,2013
+"BRISONr_60","Kalahari","B","EU","LIMAGRAIN GmbH",TRUE,TRUE,FALSE,2010
+"BRISONr_61","Intro","B","DE,FRA","RAGT 2N",TRUE,TRUE,FALSE,2011
+"BRISONr_62","Oxal","B","DE","RAGT/Mellinger",TRUE,TRUE,FALSE,2010
+"BRISONr_63","Zobel","A","DE","Syngenta Cereals GmbH",TRUE,TRUE,FALSE,2006
+"BRISONr_64","Event","E","DE","Saatzucht Josef Breun",TRUE,TRUE,FALSE,2009
+"BRISONr_65","Joker","A","DE","DSV",TRUE,TRUE,FALSE,2012
+"BRISONr_66","Global","B","DE,AT","RAGT/Mellinger",TRUE,TRUE,FALSE,2009
+"BRISONr_67","Elixer","C","DE","v. Borris-Eckendorf",TRUE,TRUE,TRUE,2012
+"BRISONr_68","Fedor","A","DE","W. von Borries-Eckendorf",TRUE,TRUE,FALSE,2007
+"BRISONr_69","Türkis","A","DE","Lantmaennen SW Seed Hadmersleben GmbH",TRUE,TRUE,TRUE,2004
+"BRISONr_7","Kurt","B","DE","LIMAGRAIN GmbH ",TRUE,TRUE,FALSE,2013
+"BRISONr_70","Skagen","E","DE","v. Borris-Eckendorf",TRUE,TRUE,FALSE,2006
+"BRISONr_71","Greif","B","DE","Lochow-Petkus",TRUE,TRUE,TRUE,1989
+"BRISONr_72","Esket","A","DE","RAGT/Mellinger",TRUE,TRUE,FALSE,2007
+"BRISONr_73","Primus","B","DE","DSV",TRUE,TRUE,FALSE,2009
+"BRISONr_74","Skalmeje","C","DE","KWS Lochow GmbH",TRUE,TRUE,FALSE,2006
+"BRISONr_75","Genius","E","DE","Nordsaat Saatzucht",TRUE,TRUE,FALSE,2010
+"BRISONr_76","Enorm","E","DE","Schweiger",TRUE,TRUE,FALSE,2002
+"BRISONr_77","Florian","E","DE","Nordsaat Saatzucht",TRUE,TRUE,FALSE,2010
+"BRISONr_78","Skater","B","DE","Limagrain-Nickerson",TRUE,TRUE,FALSE,2000
+"BRISONr_79","Brilliant","A","DE","SW Seeds",TRUE,TRUE,FALSE,2005
+"BRISONr_8","Zappa","Ck","DE","Ackermann Saatzucht",TRUE,TRUE,FALSE,2009
+"BRISONr_80","Inspiration","B","DE","Saatzucht Josef Breun GmbH & Co.KG",TRUE,TRUE,TRUE,2007
+"BRISONr_81","Apertus","A","DE","Dr. Hermann Strube",TRUE,TRUE,FALSE,2013
+"BRISONr_82","Ellvis","A","DE","Breun",TRUE,TRUE,FALSE,2002
+"BRISONr_83","Edgar","B","DE","LIMAGRAIN GmbH",TRUE,TRUE,FALSE,2010
+"BRISONr_84","Maris Huntsman","A","DE","Nordsaat",TRUE,TRUE,FALSE,1975
+"BRISONr_85","SY Ferry","B","DE","Syngenta Seeds GmbH",TRUE,TRUE,FALSE,2012
+"BRISONr_86","Landsknecht","C","DE","Secobra Recherches",TRUE,TRUE,FALSE,2013
+"BRISONr_87","Sponsor",NA,"FR, IE"," Unisigma",TRUE,TRUE,FALSE,1994
+"BRISONr_88","Impression","A","DE","Saatzucht Schweiger GbR",TRUE,TRUE,FALSE,2005
+"BRISONr_89","Winnetou","C","DE","Saatzucht Firlbeck",TRUE,TRUE,FALSE,2002
+"BRISONr_9","Chevalier","A","EU","DSV ",TRUE,TRUE,FALSE,2005
+"BRISONr_90","Toronto","A","DE","Strengs Erben",TRUE,TRUE,FALSE,1990
+"BRISONr_91","Torrild","A","DE","v. Borris-Eckendorf",TRUE,TRUE,FALSE,2005
+"BRISONr_92","Contra","C","DE","Saatzucht Breun",TRUE,TRUE,TRUE,1990
+"BRISONr_93","Schamane","A","DE","Saatzucht Engelen Buechling e.K.",TRUE,TRUE,FALSE,2005
+"BRISONr_94","Granada","B","DE","Schweiger",TRUE,TRUE,FALSE,1980
+"BRISONr_95","KWS Cobalt","A","DE","KWS LOCHOW GMBH",TRUE,TRUE,FALSE,2013
+"BRISONr_96","Tommi","A","DE","Nordsaat",TRUE,TRUE,TRUE,2002
+"BRISONr_97","Saturn","B","DE","MPI",TRUE,TRUE,FALSE,1973
+"BRISONr_98","Severin","A9",NA,"Bauer, G.",TRUE,TRUE,FALSE,1980
+"BRISONr_99","JB Asano","A","DE","Saatzucht Josef Breun GmbH & Co.KG",TRUE,TRUE,TRUE,2008
+"BRISONr_221","Julius","A",NA,"KWS Lochow",FALSE,TRUE,TRUE,2008
+"BRISONr_222","RGT Reform","A",NA,"RAGT",FALSE,TRUE,TRUE,2014
+"BRISONr_223","Benchmark","B",NA,"Sejet",FALSE,TRUE,TRUE,2015
+"BRISONr_224","Barranco","E",NA,"Secobra",FALSE,TRUE,TRUE,2016
+"BRISONr_225","Nordkap","A",NA,"Nordsaat",FALSE,TRUE,TRUE,2016
+"BRISONr_226","Porthus","B",NA,"Strube",FALSE,TRUE,TRUE,2016
+"BRISONr_227","Sheriff","C",NA,"ISZ/Sejet",FALSE,TRUE,TRUE,2016
+"BRISONr_228","Apostel","A",NA,"Streng",FALSE,TRUE,TRUE,2016

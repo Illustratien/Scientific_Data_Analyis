@@ -2,11 +2,9 @@ rm(list = ls())
 pacman::p_load(dplyr,ggplot2,scales,purrr,relaimpo,foreach)
 source("scripts/fun/SW_fun.R")
 # -------------------------------------------------------------------------
-geno_info <-  read.csv("data/cultivar_info.csv")  %>% 
+geno_info <-  read.csv("data/BRIWECs_cultivar_info.csv")  %>% 
   relocate(RYear, .after = last_col()) %>% 
-  dplyr::select(-c(quality:breeder)) %>% 
-  # select only Kai's cultivars
-  filter(kai==T)
+  filter(breeding_progress==T)
 
 env_gen_averaged <- readRDS("output/BLUE.RDS") %>% 
   merge(geno_info)%>%
