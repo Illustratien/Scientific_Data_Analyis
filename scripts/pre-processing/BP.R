@@ -126,11 +126,6 @@ s_window_plot <- res_ls  %>%
     return(.x[[3]])
   })
 
-
-# pdf("figure/SW_all_BLUEs.pdf",onefile = T,width = 16,height=10)
-# s_window_plot %>% walk(.,~{print(.x)})
-# dev.off()
-
 ##write sliding window results
 write.csv (s_window, file = "output/Slidingwindow_BLUES.csv",
            row.names = FALSE)
