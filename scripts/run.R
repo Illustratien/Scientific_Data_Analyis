@@ -1,5 +1,4 @@
 # install necessary packages
-
 dir.create("output",showWarnings = FALSE)
 dir.create("figure",showWarnings = FALSE)
 # calculate BLUEs
@@ -16,4 +15,3 @@ for(i in eachfig){
   figure.path <- 'scripts/figures'
   source(file.path(figure.path,i))
 }
-
