@@ -64,7 +64,7 @@ sdf <- R_raw %>% dplyr::select(trait,sma_slope,sma_sig,R2,Rsign) %>% distinct() 
   mutate(m=mean(R2),
          trait=case_when(trait=='Crude_protein'~'GP',
                          trait=='Seedyield'~'GY',
-                         trait=='Kernel'~'GN',
+                         trait=='Grain'~'GN',
                          trait=='Harvest_Index_bio'~"HI",
                          trait=='Spike_number_bio'~'SN',
                          trait=='Grain_per_spike_bio'~'GpS',
