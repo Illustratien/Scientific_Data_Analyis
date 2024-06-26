@@ -114,7 +114,7 @@ mergedf%>% mutate(egp=gsub("all"," ",egp),
         axis.text =   element_text(color="black"   ,size=5  ,face = 'bold'),
         legend.position = "bottom"
         )+
-  xlab("levels of single groupping for growing conditions (Y/L/M)")+
+  xlab("levels of single grouping for growing conditions (Y/L/M)")+
   ylab(
     parse(text="relative~importance~of~BP[trait]~to~BP[yield]"))+
   geom_text(aes(label=round(explain,2)),size =2.5,fontface="bold", 
@@ -123,10 +123,10 @@ mergedf%>% mutate(egp=gsub("all"," ",egp),
   guides(fill=guide_legend(title=parse(text="BP[trait]")))
 
 
-tiff(filename="figure/Fig8.tiff",
+png(filename="figure/Fig8.png",
      type="cairo",
      units="cm",
-     compression = "lzw",
+     # compression = "lzw",
      width=12,
      height=10,
      pointsize=12,
