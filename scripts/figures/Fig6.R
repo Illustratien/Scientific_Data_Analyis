@@ -129,6 +129,38 @@ tiff(filename="figure/Fig6.tiff",
 egg::tag_facet(p,open = "",close = "",tag_pool = LETTERS[1:2])
 dev.off()
 # table -------------------------------------------------------------------------
+# p <-
+  ipnutdf %>% 
+  ggplot()+
+  geom_hline(yintercept = 0,color="darkgray",linetype=35)+
+  geom_vline(xintercept = 0,color="darkgray",linetype=35)+
+  geom_abline(slope=1,intercept = 0,linetype=8,
+              # linewidth=2,
+              color="darkgray",alpha=.5)+
+  geom_point(aes(r_value,r_apsim,
+                 # color=k,
+                 # shape=t
+  ),shape=1,
+  show.legend = F)+
+  # scale_size_area()+
+  # scale_shape_manual(values=c(a=2,b=2,c=1,d=0))+
+  scale_y_continuous(limits=c(-1,1))+
+  scale_x_continuous(limits=c(-1,1))+
+  toolPhD::theme_phd_main(b=5,legend.position="bottom", 
+                          legend.box="vertical")+
+  facet_grid(~r_name,labeller = labeller(r_name=supp.labs,type=label_parsed))+
+  xlab(parse(text="italic(r)~from~field~data ~2015-2017"))+
+  ylab(parse(text="italic(r)~from~simulation~data"))+
+  ggrepel::geom_text_repel(seed = 57921,
+                           data=ipnutdf %>% filter(abs(r_value)<=.5&abs(r_apsim)<=.5),
+                           mapping=aes(r_value,r_apsim,label=s),
+                           max.overlaps = 999,
+                           box.padding = .1,size=3)+
+  ggrepel::geom_text_repel(seed = 57921,
+                           data=ipnutdf %>% filter(abs(r_value)>.5|abs(r_apsim)>.5),
+                           mapping=aes(r_value,r_apsim,label=s),max.overlaps = 999,
+                           box.padding = .1,size=3.5,fontface="bold")
+
 # 
 # pair_filter<- function(a,b){
 #   vec <- c(paste(a,b,sep="-"),
