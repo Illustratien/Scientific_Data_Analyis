@@ -15,8 +15,6 @@ alt="Breeding Innovations in Wheat for Efficient Cropping Systems (BRIWECS)." />
 Efficient Cropping Systems (BRIWECS).</figcaption>
 </figure>
 
-## Reproducible Data Analysis Workflow
-
 <!-- [![License: GPL-3](https://img.shields.io/badge/License-GPL3-orange)](https://www.r-project.org/Licenses/) -->
 
 ## insturctution
