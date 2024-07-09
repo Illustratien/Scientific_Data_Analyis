@@ -9,8 +9,13 @@ R_raws <- R_raw%>%
 un <- xlsx::read.xlsx("data/Unit.xlsx",sheetIndex = 1) %>% 
 dplyr::select(trait,abbrev)
 # -------------------------------------------------------------------------
-fillpalette <- viridis::viridis(3)
+# fillpalette <- viridis::viridis(3)
+
+
+fillpalette <- c("#136940","#00A337","#f9ca6c")
 names(fillpalette) <- c("HN_WF_RF","HN_NF_RF","LN_NF_RF")
+
+
 
 nice_break <- function(range.vec,nbk,digit,include=T){
   axis_breaks <- pretty(range.vec, nbk)

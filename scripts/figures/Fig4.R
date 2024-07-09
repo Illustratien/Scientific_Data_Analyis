@@ -132,15 +132,15 @@ p <- sdf%>%
   scale_y_continuous(limits = c(-0.1,1.1),breaks = c(0,.4,.8))+
   ylab(parse(text='italic(R)[sma]^2'))
 
-tiff(filename="figure/Fig4.tiff",
-     type="cairo",
-     units="cm",
-     compression = "lzw",
-     width=16,
-     height=10,
-     pointsize=12,
-     res=600,# dpi,
-     family="Arial")
+
+png(filename="figure/Fig4.png",
+    type="cairo",
+    units="cm",
+    width=16,
+    height=10,
+    pointsize=12,
+    res=600,# dpi,
+    family="Arial")
 p
 dev.off()
 

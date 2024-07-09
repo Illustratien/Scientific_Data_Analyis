@@ -1,6 +1,6 @@
 ## ggsflabel has to be installed from github
 # devtools::install_github("yutannihilation/ggsflabel")
-
+rm(list=ls())
 pacman::p_load(dplyr,readr,sf,ggthemes,rnaturalearth,ggrepel,
                ggsflabel,ggplot2,purrr,toolPhD,ggtern)
 ## Background map
@@ -27,7 +27,9 @@ locations_2 <- locations %>%
   filter(Location %in% c("HAN", "KAL"))
 
 ## Map
-fig1 <- ggplot() +
+fig1 <- 
+  suppressMessages(
+  ggplot() +
   theme_map() + 
   theme(
     panel.background = element_rect(fill = "dodgerblue3",
@@ -43,7 +45,7 @@ fig1 <- ggplot() +
                                     pad_x = unit(0.1, "in"), 
                                     pad_y = unit(0.1, "in"),
                                     style = ggspatial::north_arrow_nautical(fill = c("grey40", "white"),
-                                                                            line_col = "grey20"))
+                                                                            line_col = "grey20")) )
 
 # -------------------------------------------------------------------------
 soil<- xlsx::read.xlsx(file="data/soil.xlsx",stringsAsFactors=F,sheetIndex = 1) %>% 

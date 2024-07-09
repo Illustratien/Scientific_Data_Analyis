@@ -42,12 +42,12 @@ BP_regg<-
       split(.,BP_wide[[envec]])
     
     imap_dfr(subdat,function(edata,elevel){
-      print(elevel)
+      # print(elevel)
       fit3 <- lm(Seedyield~TGW+Harvest_Index_bio+Straw+
                    Grain_per_spike_bio+Spike_number_bio, data=na.omit(edata)) 
       
-      PerformanceAnalytics::chart.Correlation(na.omit(edata) %>% 
-                                                .[,-c(1:4)]) %>% print()
+      # PerformanceAnalytics::chart.Correlation(na.omit(edata) %>% 
+      #                                           .[,-c(1:4)]) %>% print()
       
       out  <- tryCatch({     relaimpo::calc.relimp(fit3, type="lmg")},
                        error=function(cond){
@@ -151,8 +151,7 @@ BP_coef<-
         tibble::rownames_to_column("Trait") %>% 
         mutate( 
           coef=paste(toolPhD::round_scale(coef),
-                     '^"',
-                     toolPhD::sig_pvalue(summary(fit3)$coefficients[,4]),'"'),
+                     toolPhD::sig_pvalue(summary(fit3)$coefficients[,4])),
           egp=envec,
           el=elevel,
           nobs=nrow(na.omit(edata))
@@ -167,8 +166,7 @@ tbla <- BP_coef %>%
           tibble::rownames_to_column("Trait") %>% 
           mutate( 
             coef=paste(toolPhD::round_scale(coef),
-                       '^"',
-                       toolPhD::sig_pvalue(summary(fit)$coefficients[,4]),'"'),
+                       toolPhD::sig_pvalue(summary(fit)$coefficients[,4])),
             egp="all",
             el="all",
             nobs=nrow(na.omit(s_window))
@@ -183,12 +181,13 @@ tbla <- BP_coef %>%
                          T~Trait)) %>%
   
   arrange(Trait) %>%
-  mutate(Trait=paste("BP[",Trait,"]")) %>% 
-  gridExtra::tableGrob(.,theme=gridExtra::ttheme_minimal(
-    core = list(fg_params=list(cex = .85,parse=T)),
-    colhead = list(fg_params=list(cex =.85,parse=T)),
-    rowhead = list(fg_params=list(cex = .85)))) 
-grid::grid.draw(tbla)
+  mutate(Trait=paste("BP[",Trait,"]")) 
+# %>% 
+  # gridExtra::tableGrob(.,theme=gridExtra::ttheme_minimal(
+  #   core = list(fg_params=list(cex = .85,parse=T)),
+  #   colhead = list(fg_params=list(cex =.85,parse=T)),
+  #   rowhead = list(fg_params=list(cex = .85)))) 
+# grid::grid.draw(tbla)
 
 
 xlsx::write.xlsx(tbla, "output/Table.xlsx",append=T,

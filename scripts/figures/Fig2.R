@@ -7,11 +7,18 @@ unit<- xlsx::read.xlsx("data/Unit.xlsx",sheetIndex = 1) %>%
                         T~unit))
 raw <- read.csv2("data/BRIWECS_data_publication.csv") %>% 
   mutate(across(BBCH59:Protein_yield,as.numeric))
+
+col_pal<- c("#df436b","#eb1010","#6ac0c9", "#0860c9",
+            "#136940",  "#f9912d","#00A337","#850242","#f9ca6c")
+
+
 # preprocessing -------------------------------------------------------------------------
 long <- raw  %>% 
   tidyr::pivot_longer(BBCH59:Protein_yield,
                       names_to="trait",values_to = "Trait") %>% 
   filter(!is.na(Trait)) %>% left_join(unit,"trait")
+names(col_pal) <- long$Treatment %>% unique()
+
 fig1_sub <- raw %>% 
   mutate(Environment = paste(Location, Year, sep = "_")) %>%
   dplyr::select(Environment,Treatment,Seedyield,Harvest_Index_bio,Grain,Straw) %>% 
@@ -24,9 +31,9 @@ fig1_sub <- raw %>%
   )
 # data range density -------------------------------------------------------------------------
 # range 
-fig1_sub %>% 
-  group_by(Trait) %>% summarise(m=min(trait,na.rm = T),
-                                M=max(trait,na.rm = T))
+# fig1_sub %>% 
+#   group_by(Trait) %>% summarise(m=min(trait,na.rm = T),
+#                                 M=max(trait,na.rm = T))
 # density plot
 fig1 <- fig1_sub %>% rename(Management=Treatment) %>% 
   ggplot() +
@@ -38,14 +45,17 @@ fig1 <- fig1_sub %>% rename(Management=Treatment) %>%
         axis.title.x = element_blank(),
         strip.background = element_blank()) +
   ggridges::geom_density_ridges(
-    alpha = 0.5,size=.3,
+    alpha = 0.5,
+    # size=.3,
     # linewidth=.2,
     scale=1,# height
     rel_min_height=0.005# width higher when value is small
   ) +
   ylab("Year x Location (Y/L)")+
-  nord::scale_color_nord('aurora')+
-  nord::scale_fill_nord('aurora')+
+  scale_fill_manual(values=col_pal)+
+  scale_color_manual(values=col_pal)+
+  # nord::scale_color_nord('aurora')+
+  # nord::scale_fill_nord('aurora')+
   scale_y_discrete(drop=FALSE) +
   ggh4x::facet_nested(~Nam,nest_line=T, 
                       switch = "x",# place strip to bottom

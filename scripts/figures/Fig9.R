@@ -185,27 +185,27 @@ Si_coef<- map_dfr(Si[2:10],~{
 }) %>%
   mutate(lab=match(Si,names(v)) %>% v[.])
 
-tbla <- Si_coef %>% dplyr::select(-Si) %>% 
-  arrange(lab) %>% 
-  tidyr::pivot_wider(values_from = coef,names_from = lab) %>% 
-  mutate(Trait=case_when(Trait=='Crude_protein'~'GP',
-                         Trait=='Seedyield'~'GY',
-                         Trait=='Harvest_Index_bio'~"HI",
-                         Trait=='Grain_per_spike_bio'~'GpS',
-                         Trait=='Spike_number_bio'~'SN',
-                         Trait=="tinfect"~"TFI",
-                         T~Trait)) %>% 
-  arrange(Trait) %>%
-  mutate(Trait=paste("SI[",Trait,"]")) %>% 
-  .[,c(1,7,2,3,8,4,9,5,10,6)] %>% 
-  gridExtra::tableGrob(.,theme=gridExtra::ttheme_minimal(
-    core = list(fg_params=list(cex = .85,parse=T)),
-    colhead = list(fg_params=list(cex =.85,parse=T)),
-    rowhead = list(fg_params=list(cex = .85)))) 
-grid::grid.draw(tbla)
+# tbla <- Si_coef %>% dplyr::select(-Si) %>% 
+#   arrange(lab) %>% 
+#   tidyr::pivot_wider(values_from = coef,names_from = lab) %>% 
+#   mutate(Trait=case_when(Trait=='Crude_protein'~'GP',
+#                          Trait=='Seedyield'~'GY',
+#                          Trait=='Harvest_Index_bio'~"HI",
+#                          Trait=='Grain_per_spike_bio'~'GpS',
+#                          Trait=='Spike_number_bio'~'SN',
+#                          Trait=="tinfect"~"TFI",
+#                          T~Trait)) %>% 
+#   arrange(Trait) %>%
+#   mutate(Trait=paste("SI[",Trait,"]")) %>% 
+#   .[,c(1,7,2,3,8,4,9,5,10,6)] %>% 
+#   gridExtra::tableGrob(.,theme=gridExtra::ttheme_minimal(
+#     core = list(fg_params=list(cex = .85,parse=T)),
+#     colhead = list(fg_params=list(cex =.85,parse=T)),
+#     rowhead = list(fg_params=list(cex = .85)))) 
+# grid::grid.draw(tbla)
 
 
-figdata <- cowplot::plot_grid(tbla, p, nrow = 2,rel_widths =  c(1, 1),labels = "AUTO")
+# figdata <- cowplot::plot_grid(tbla, p, nrow = 2,rel_widths =  c(1, 1),labels = "AUTO")
 
 # tiff(filename="output/Fig9.tiff",
 #      type="cairo",
@@ -220,10 +220,10 @@ figdata <- cowplot::plot_grid(tbla, p, nrow = 2,rel_widths =  c(1, 1),labels = "
 # dev.off()
 
 
-tiff(filename="figure/Fig9.tiff",
+png(filename="figure/Fig9.png",
      type="cairo",
      units="cm",
-     compression = "lzw",
+     # compression = "lzw",
      width=16,
      height=14,
      pointsize=12,

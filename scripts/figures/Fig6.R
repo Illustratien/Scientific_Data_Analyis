@@ -117,10 +117,10 @@ p <-
                            box.padding = .1,size=2.5,fontface="bold")
 
 # p
-tiff(filename="figure/Fig6.tiff",
+png(filename="figure/Fig6.png",
      type="cairo",
      units="cm",
-     compression = "lzw",
+     # compression = "lzw",
      width=19,
      height=12,
      pointsize=12,
@@ -161,23 +161,23 @@ dev.off()
                            mapping=aes(r_value,r_apsim,label=s),max.overlaps = 999,
                            box.padding = .1,size=3.5,fontface="bold")
 
-# 
-# pair_filter<- function(a,b){
-#   vec <- c(paste(a,b,sep="-"),
-#            paste(b,a,sep="-")
-#   )
-#   ipnutdf %>% 
-#     filter(s%in%vec) %>% 
-#     arrange(r_name,abs(r_value),rmse)
-# }
-# pair_filter("GY","GN")
-# pair_filter("GY","GP")
-# pair_filter("TGW","GN")
-# pair_filter("Straw","GY")
-# pair_filter("HI","GY")
-# pair_filter("Straw","GY")
-# pair_filter("HI","GN")
-# pair_filter("GP","Straw")
+
+pair_filter<- function(a,b){
+  vec <- c(paste(a,b,sep="-"),
+           paste(b,a,sep="-")
+  )
+  ipnutdf %>%
+    filter(s%in%vec) %>%
+    arrange(r_name,abs(r_value),rmse)
+}
+pair_filter("GY","GN")
+pair_filter("GY","GP")
+pair_filter("TGW","GN")
+pair_filter("Straw","GY")
+pair_filter("HI","GY")
+pair_filter("Straw","GY")
+pair_filter("HI","GN")
+pair_filter("GP","Straw")
 # 
 # 
 # rs<- ipnutdf %>% 

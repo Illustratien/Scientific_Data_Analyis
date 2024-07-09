@@ -12,6 +12,7 @@ source(file.path("scripts/pre-processing","R2sma.R"))
 figure.path <- 'scripts/figures'
 eachfig <- list.files(figure.path)
 for(i in eachfig){
+  print(i)
   figure.path <- 'scripts/figures'
   source(file.path(figure.path,i))
 }

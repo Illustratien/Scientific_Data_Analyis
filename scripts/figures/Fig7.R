@@ -1,6 +1,7 @@
 rm(list=ls())
 pacman::p_load(dplyr,purrr,ggplot2)
 level_order <- c('HN_WF_RF', 'HN_NF_RF', 'LN_NF_RF') 
+
 traitlist <- c('Straw','Harvest_Index_bio','TGW',
                "Spike_number_bio",'Grain_per_spike_bio',
                'Biomass','Seedyield','Grain')
@@ -17,13 +18,14 @@ blue <- readRDS("output/BLUE.RDS") %>%
                 Year<2018)
 m.gen <- 
   map_dfr(c('Seedyield','Straw','Harvest_Index_bio','Biomass',
-            'TGW','Grain','Grain_per_spike_bio',"Spike_number_bio") ,function(tr){
-              blue %>% 
-                dplyr::filter(
-                  trait==tr) %>% 
-                group_by_at(c("Treatment","Location","Year","trait")) %>% 
-                summarise(BRISONr=length(unique(BRISONr)),.groups="drop") 
-            })
+            'TGW','Grain','Grain_per_spike_bio',"Spike_number_bio") ,
+          function(tr){
+            blue %>% 
+              dplyr::filter(
+                trait==tr) %>% 
+              group_by_at(c("Treatment","Location","Year","trait")) %>% 
+              summarise(BRISONr=length(unique(BRISONr)),.groups="drop") 
+          })
 
 env_trait<-  m.gen %>%
   group_by(Location,Treatment,trait) %>%
@@ -79,6 +81,7 @@ orderid<- s_window_statistic %>%
   arrange(desc(cv))%>%
   dplyr::select(abbrev) %>% 
   mutate(letter=letters[1:n()])
+
 # levels(sdf$abbrev)
 # sdf$unit %>% unique()
 p <- s_window_statistic%>% 
@@ -131,8 +134,6 @@ p <- s_window_statistic%>%
              dir="h",
              labeller =  label_parsed
              # stickylabeller::label_glue('({.L}) {abbrev} {unit}\n{cvnam}')
-             
-             
   )
 # p
 png(filename="figure/Fig7.png",
