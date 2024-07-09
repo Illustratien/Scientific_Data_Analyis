@@ -5,6 +5,7 @@ always_allow_html: true
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![Zenodo-repository](https://img.shields.io/badge/Data-10.5281/zenodo.12654376-darkred)](https://zenodo.org/records/12654377)
 [![Website - pkgdown](https://img.shields.io/badge/data-visulaization-blue)](https://tillrose.github.io/BRIWECS_Data_Publication/data_overview.html) [![Project-website](https://img.shields.io/badge/Project-website-darkgreen)](https://www.igps.uni-hannover.de/de/forschung/forschungsprojekte/detailansicht/projects/forschungsverbund-briwecs)
 
 ![Breeding Innovations in Wheat for Efficient Cropping Systems (BRIWECS).](https://github.com/tillrose/BRIWECS_Data_Publication/blob/main/figure/BRIWECS_logo.png){fig-align="right"}
@@ -25,7 +26,6 @@ suppressWarnings(library(ggraph))
 options(dplyr.summarise.inform = FALSE)
 ```
 
-## Reproducible analysis
 
 ## insturctution
 
@@ -38,7 +38,7 @@ options(dplyr.summarise.inform = FALSE)
 ```{r,echo=F,fig.width=10, fig.height=10,warning=F}
 dirs <- list.dirs(path = ".", full.names = TRUE, recursive = TRUE) 
 
-r.target <- paste(c(".git",".Rproj.user",".quarto","gfm","docs"),
+r.target <- paste(c(".git",".Rproj.user","talk",".quarto","gfm","docs"),
                   collapse='|')
 dirs <- dirs[!grepl(r.target,dirs)]
 
@@ -48,7 +48,7 @@ dirs <-
   purrr::map(e.target,~{
     list.files(.x,all.files = T,recursive = T,full.names = T)
   }) %>% Reduce(x = .,"c")  %>% 
-  c(.,dirs)
+  c(.,dirs) %>% .[!grepl("talk",.)]
 
 dirst <- gsub("\\.\\/","Root/",dirs)
 
@@ -57,8 +57,10 @@ x <- lapply(strsplit(dirst, "/"),
   plyr::rbind.fill(.) %>%
   filter(!is.na(V2)) %>% 
   group_by(V1,V2,V3) %>%
-  reframe(V4 = case_when(n() > 5&(!V3%in%c("pre-processing","figure"))~sprintf("%s files",n()-1),
-                           T~V4)) %>% 
+  reframe(V4 = case_when(n() > 5&(!V3%in%c("pre-processing","fun"))~sprintf("%s files",n()-1),T~V4)) %>% 
+  group_by(V1,V2) %>%
+  mutate(V3 = case_when(n() > 5&(V2%in%c("figure"))~sprintf("%s files",n()-1),T~V3))%>%
+  group_by(V1,V2,V3) %>%
   mutate(V2=factor(V2,levels=c("data","metadata","scripts","output","figure"))) %>% 
   arrange(desc(V2)) %>% suppressWarnings()
 
@@ -66,9 +68,9 @@ x$pathString <- apply(x, 1, function(x) paste(trimws(na.omit(x)), collapse="/"))
 
 do.call('rbind', 
         strsplit(x$pathString, '/') %>%
-  lapply(function(a) sapply(seq_along(a),
-                            function(y) paste(a[1:y], collapse = '/'))) %>% 
-  lapply(function(b) cbind(head(b, -1), tail(b, -1)))
+          lapply(function(a) sapply(seq_along(a),
+                                    function(y) paste(a[1:y], collapse = '/'))) %>% 
+          lapply(function(b) cbind(head(b, -1), tail(b, -1)))
 ) %>% 
   as.data.frame() %>%
   unique() %>%

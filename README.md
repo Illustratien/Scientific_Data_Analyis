@@ -1,6 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![Zenodo-repository](https://img.shields.io/badge/Data-10.5281/zenodo.12654376-darkred)](https://zenodo.org/records/12654377)
 [![Website -
 pkgdown](https://img.shields.io/badge/data-visulaization-blue)](https://tillrose.github.io/BRIWECS_Data_Publication/data_overview.html)
 [![Project-website](https://img.shields.io/badge/Project-website-darkgreen)](https://www.igps.uni-hannover.de/de/forschung/forschungsprojekte/detailansicht/projects/forschungsverbund-briwecs)
@@ -17,8 +18,6 @@ Efficient Cropping Systems (BRIWECS).</figcaption>
 ## Reproducible Data Analysis Workflow
 
 <!-- [![License: GPL-3](https://img.shields.io/badge/License-GPL3-orange)](https://www.r-project.org/Licenses/) -->
-
-## Reproducible analysis
 
 ## insturctution
 
