@@ -135,7 +135,7 @@ p <- s_window_statistic%>%
              labeller =  label_parsed
              # stickylabeller::label_glue('({.L}) {abbrev} {unit}\n{cvnam}')
   )
-p
+# p
 png(filename="figure/Fig7.png",
     type="cairo",
     units="cm",
