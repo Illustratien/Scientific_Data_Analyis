@@ -140,14 +140,16 @@ p <- ggplot(Si_reg %>%
                                      Trait=="tinfect"~"TFI",
                                      Trait=="Straw"~"SI[Straw]",
                                      Trait=="TGW"~"SI[TGW]",
-                                     T~Trait))%>%
+                                     T~Trait),
+                     explain=round(explain*100,0)
+                     )%>%
               arrange(lab) ,
             aes(fill=Trait, y=explain, x=lab)) + 
   geom_bar(position="stack", stat="identity")+
   scale_x_discrete(labels = function(l) parse(text=l))+
   scale_fill_manual(values=fil.pal,labels=scales::parse_format())+
   toolPhD::theme_phd_main()+
-  ylab(parse(text="relative~importance~of~regressors~to~SI[yield]"))+
+  ylab(parse(text='relative~importance~of~regressors~to~SI[yield]~"(%)"'))+
   theme(axis.text.x = element_text(vjust=.5),
         legend.text.align = 0)+
   guides(fill=guide_legend(title=parse(text="regressors")))+

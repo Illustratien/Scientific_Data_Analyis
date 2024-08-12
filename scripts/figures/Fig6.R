@@ -126,7 +126,7 @@ png(filename="figure/Fig6.png",
      pointsize=12,
      res=600,# dpi,
      family="Arial")
-egg::tag_facet(p,open = "",close = "",tag_pool = LETTERS[1:2])
+egg::tag_facet(p,open = "",close = "",tag_pool = letters[1:2])
 dev.off()
 # table -------------------------------------------------------------------------
 # p <-

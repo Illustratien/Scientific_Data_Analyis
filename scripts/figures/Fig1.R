@@ -122,7 +122,7 @@ fig2 <- suppressMessages(ggplot(data = USDA,
   theme_showarrows() +
   labs(yarrow = "clay (%)",
        zarrow = "silt (%)",
-       xarrow = "sand(%)") +
+       xarrow = "sand (%)") +
   theme_clockwise() +
   guides(fill=FALSE, color=FALSE)+
   geom_text(
@@ -151,7 +151,7 @@ png(filename="figure/Fig1.png",
 
 cowplot::plot_grid(fig1,
                    grid.arrange(fig2),
-                   nrow=1,labels = c("A","B"),rel_widths = c(.7,1.2),
+                   nrow=1,labels = c("a","b"),rel_widths = c(.7,1.2),
                    align = "hv") %>% suppressWarnings()
 
 

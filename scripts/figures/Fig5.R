@@ -47,8 +47,8 @@ lsddf<- function(formu,dat){
 strpdf<- data.frame(
   type=c("Year","Location","Treatment",
          "Treatment-Location","Treatment-Year"),
-  ltype=c("(A) Year","(B) Location","(C) Treatment",
-          "(D) Treatment-Location","(E) Treatment-Year"))
+  ltype=c("(a) Year","(b) Location","(c) Treatment",
+          "(d) Treatment-Location","(e) Treatment-Year"))
 
 plot_raw2<- function(tr){
   # stacked version vertical for plot_raw()
@@ -135,8 +135,8 @@ plot_raw2<- function(tr){
         parse(text=paste(with(un,abbrev[match(tr,trait)]),'~R[sma]^"2":~',round(min(ssdf$tar),2),
                          '*"~"*',round(max(ssdf$tar),2))))+
       scale_color_manual(values=col_pal)+
-      facet_nested(~forcats::fct_relevel(ltype,"(A) Year","(B) Location","(C) Treatment",
-                                         "(D) Treatment-Location","(E) Treatment-Year")+f2,
+      facet_nested(~forcats::fct_relevel(ltype,"(a) Year","(b) Location","(c) Treatment",
+                                         "(d) Treatment-Location","(e) Treatment-Year")+f2,
                    # nrow = 1,
                    # labeller = stickylabeller::label_glue('({.L}) {type}'),
                    nest_line = element_line(colour = "black"),space = 'free',

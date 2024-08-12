@@ -115,7 +115,7 @@ cp <- cowplot::plot_grid(fig1+
                              axis.title = element_text(size=6),
                              axis.text.x=element_text(size=5),
                              axis.text.y=element_text(size=5)),
-                         nrow=1,labels = c("A","B"),align = "hv")%>% 
+                         nrow=1,labels = c("a","b"),align = "hv")%>% 
   suppressWarnings() %>% suppressMessages()
 png(filename="figure/Fig2.png",
     type="cairo",

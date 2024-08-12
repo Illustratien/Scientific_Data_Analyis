@@ -29,7 +29,7 @@ m.gen <-
 
 env_trait<-  m.gen %>%
   group_by(Location,Treatment,trait) %>%
-  summarise(n=n()) %>% ungroup() %>% 
+  summarise(n=n(),.groups="drop") %>% ungroup() %>% 
   filter(n==3) %>% dplyr::select(-n)%>% rename(Parameter=trait)
 
 s_window_statistic <- read.csv("output/Slidingwindow_BLUES_statistics.csv") %>% 
@@ -43,8 +43,8 @@ s_window_statistic <- read.csv("output/Slidingwindow_BLUES_statistics.csv") %>%
          Treatment_Location=paste(Treatment, Location, sep="-"),
          Treatment_Year=paste(Treatment, Year, sep="-")
   ) %>% 
-  left_join(.,un) %>% 
-  left_join(env_trait,.) %>% 
+  left_join(.,un,"Parameter") %>% 
+  left_join(env_trait,.,by = join_by(Location, Treatment, Parameter)) %>% 
   filter(!is.na(Ab_BP)) %>% 
   group_by(Parameter) %>%
   mutate(m=mean(Ab_BP),
@@ -70,11 +70,11 @@ mordid <- s_window_statistic %>%
   summarise(
     m=length(which(Ab_BP<0)),
     m=case_when(m==0~-1*mean(Ab_BP),
-                T~m)) %>%
+                T~m),.groups="drop") %>%
   arrange(m)
 
 
-orderid<- s_window_statistic %>%
+orderid<- s_window_statistic %>%ungroup() %>% 
   dplyr::select(abbrev,cv,unit) %>%
   distinct() %>% 
   mutate(cv=as.numeric(cv)) %>% 
@@ -86,11 +86,10 @@ orderid<- s_window_statistic %>%
 # sdf$unit %>% unique()
 p <- s_window_statistic%>% 
   mutate(
-    
     unit=gsub("\\s+","~",unit) %>% 
       gsub("\\/",'*"\\/"*',.) %>% 
       gsub("\\~\\*",'\\~',.),
-    letter=LETTERS[match(abbrev,mordid$abbrev)],
+    letter=letters[match(abbrev,mordid$abbrev)],
     cvnam=paste0(
       '~"("*',
       letter,
@@ -105,7 +104,8 @@ p <- s_window_statistic%>%
     mnam=paste0('bar(BP[',abbrev,'])*"="*',toolPhD::round_scale(m)),
     abbrev=factor(abbrev,levels=mordid$abbrev)) %>% 
   ggplot(aes(abbrev,Ab_BP,group=abbrev))+
-  ggplot2::scale_fill_viridis_d(option = "D") + 
+  guides(color=guide_legend(title=parse(text="italic(p)-value")))+
+  # ggplot2::scale_color_viridis_d(option = "D",name=) + 
   ggplot2::geom_violin(alpha = 0.5, 
                        position = position_dodge(width = 1), 
                        linewidth = .5) + 
@@ -135,7 +135,7 @@ p <- s_window_statistic%>%
              labeller =  label_parsed
              # stickylabeller::label_glue('({.L}) {abbrev} {unit}\n{cvnam}')
   )
-# p
+p
 png(filename="figure/Fig7.png",
     type="cairo",
     units="cm",

@@ -30,7 +30,7 @@ Si_reg <-  data.frame(explain=out$lmg) %>%
          nobs=nrow(na.omit(s_window))
   )
 # check colinearity
-PerformanceAnalytics::chart.Correlation(s_window %>% dplyr::select(Grain_per_spike_bio:TGW))
+# PerformanceAnalytics::chart.Correlation(s_window %>% dplyr::select(Grain_per_spike_bio:TGW))
 
 # # subgroup -------------------------------------------------------------------------
 env_ref <- c("Treatment","Location","Year")
@@ -96,9 +96,11 @@ names(fil.pal) <-  c("GP",
                      "TGW")
 
 p <-
-mergedf%>% mutate(egp=gsub("all"," ",egp),
-                  el=paste0(el,"\n(",nobs,")")
-                  ) %>% 
+  mergedf%>% 
+  mutate(egp=gsub("all"," ",egp),
+         el=paste0(el,"\n(",nobs,")"),
+         explain=round(explain*100,0)
+  ) %>% 
   ggplot(.,aes(fill=Trait, y=explain, x=interaction(el,egp))) + 
   geom_bar(position="stack", stat="identity")+
   scale_fill_manual(values=fil.pal)+ 
@@ -113,10 +115,10 @@ mergedf%>% mutate(egp=gsub("all"," ",egp),
         legend.text = element_text(color="black" ,size=5  ,face = 'bold'),
         axis.text =   element_text(color="black"   ,size=5  ,face = 'bold'),
         legend.position = "bottom"
-        )+
+  )+
   xlab("levels of single grouping for growing conditions (Y/L/M)")+
   ylab(
-    parse(text="relative~importance~of~BP[trait]~to~BP[yield]"))+
+    parse(text='relative~importance~of~BP[trait]~to~BP[yield]~"(%)"'))+
   geom_text(aes(label=round(explain,2)),size =2.5,fontface="bold", 
             color="white",family="Arial",
             position = position_stack(vjust = 0.5))+
@@ -124,14 +126,14 @@ mergedf%>% mutate(egp=gsub("all"," ",egp),
 
 
 png(filename="figure/Fig8.png",
-     type="cairo",
-     units="cm",
-     # compression = "lzw",
-     width=12,
-     height=10,
-     pointsize=12,
-     res=600,# dpi,
-     family="Arial")
+    type="cairo",
+    units="cm",
+    # compression = "lzw",
+    width=12,
+    height=10,
+    pointsize=12,
+    res=600,# dpi,
+    family="Arial")
 p
 dev.off()
 
@@ -183,10 +185,10 @@ tbla <- BP_coef %>%
   arrange(Trait) %>%
   mutate(Trait=paste("BP[",Trait,"]")) 
 # %>% 
-  # gridExtra::tableGrob(.,theme=gridExtra::ttheme_minimal(
-  #   core = list(fg_params=list(cex = .85,parse=T)),
-  #   colhead = list(fg_params=list(cex =.85,parse=T)),
-  #   rowhead = list(fg_params=list(cex = .85)))) 
+# gridExtra::tableGrob(.,theme=gridExtra::ttheme_minimal(
+#   core = list(fg_params=list(cex = .85,parse=T)),
+#   colhead = list(fg_params=list(cex =.85,parse=T)),
+#   rowhead = list(fg_params=list(cex = .85)))) 
 # grid::grid.draw(tbla)
 
 
