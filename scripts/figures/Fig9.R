@@ -71,7 +71,8 @@ data_list<-   blue %>%
   tidyr::unite("Env",c( 'Location',"Treatment","Year"),sep="-",remove = F) %>%
   dplyr::select(BRISONr:emmean,Env:trait,Treatment) %>%
   rename(Trait=emmean) %>%
-  left_join(env_list,.) 
+  left_join(env_list,.,by = join_by(Location, Treatment,
+                                    trait)) 
 
 Si_df <- data_list%>%
   group_by(trait) %>% 
@@ -84,7 +85,7 @@ Si_df <- data_list%>%
       trait="Trait",
       unit.correct = T,
       lambda = quantile(.x$Trait,.95)
-    ) %>% 
+    ) %>% suppressWarnings() %>% 
       mutate(trait=.x$trait[1]) %>% 
       mutate_all(~ifelse(is.nan(.), NA, .))
   }) 
@@ -221,17 +222,16 @@ Si_coef<- map_dfr(Si[2:10],~{
 # figdata
 # dev.off()
 
-
-png(filename="figure/Fig9.png",
+tiff(filename="figure/Fig9.tiff",
      type="cairo",
      units="cm",
-     # compression = "lzw",
+     compression = "lzw",
      width=16,
      height=14,
      pointsize=12,
      res=600,# dpi,
      family="Arial")
-p
+p %>% print()
 dev.off()
 
 

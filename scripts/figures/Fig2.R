@@ -117,10 +117,10 @@ cp <- cowplot::plot_grid(fig1+
                              axis.text.y=element_text(size=5)),
                          nrow=1,labels = c("a","b"),align = "hv")%>% 
   suppressWarnings() %>% suppressMessages()
-png(filename="figure/Fig2.png",
+tiff(filename="figure/Fig2.tiff",
     type="cairo",
     units="cm",
-    # compression = "lzw",
+    compression = "lzw",
     width=20,
     height=12,
     pointsize=3,

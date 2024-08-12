@@ -140,19 +140,17 @@ fig2 <- suppressMessages(ggplot(data = USDA,
   )+
   theme(axis.title = element_blank()))
 # -------------------------------------------------------------------------
-png(filename="figure/Fig1.png",
+p <- cowplot::plot_grid(fig1,
+                        grid.arrange(fig2),
+                        nrow=1,labels = c("a","b"),rel_widths = c(.7,1.2),
+                        align = "hv") %>% suppressWarnings()
+tiff(filename="figure/Fig1.tiff",
     type="cairo",
     units="cm",
     width=16,
-    height=8,
+    height=8, compress="lzw",
     pointsize=3,
     res=600,# dpi,
     family="Arial")
-
-cowplot::plot_grid(fig1,
-                   grid.arrange(fig2),
-                   nrow=1,labels = c("a","b"),rel_widths = c(.7,1.2),
-                   align = "hv") %>% suppressWarnings()
-
-
+p %>% print()
 dev.off()

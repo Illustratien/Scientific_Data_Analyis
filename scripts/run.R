@@ -16,3 +16,6 @@ for(i in eachfig){
   figure.path <- 'scripts/figures'
   source(file.path(figure.path,i))
 }
+
+figure.path <- 
+source(file.path('scripts/figures','Fig9.R'))

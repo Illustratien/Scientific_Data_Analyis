@@ -181,10 +181,10 @@ shp2 <- c(1,2)
 names(shp2) <- c("+","-")
 # dtype.vec <- R_raw$data %>% unique()
 # R <- "R2_sma"
-png(filename="figure/Fig5.png",
+tiff(filename="figure/Fig5.tiff",
     type="cairo",
     units="cm",
-    height = 28,width = 30,
+    height = 28,width = 30, compress="lzw",
     pointsize=3,
     res=650,# dpi,
     family="Arial")

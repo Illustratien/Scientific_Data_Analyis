@@ -53,8 +53,9 @@ mp <- s%>%
         strip.placement = "outside"
   )
 figdata <- cowplot::plot_grid(tbla, mp, nrow = 1,rel_widths =  c(1, 3))
-png(filename="figure/Fig3.png",
+tiff(filename="figure/Fig3.tiff",
     type="cairo",
+    compress="lzw",
     units="cm",
     width=26,
     height=12,

@@ -117,16 +117,16 @@ p <-
                            box.padding = .1,size=2.5,fontface="bold")
 
 # p
-png(filename="figure/Fig6.png",
+tiff(filename="figure/Fig6.tiff",
      type="cairo",
      units="cm",
-     # compression = "lzw",
+     compression = "lzw",
      width=19,
      height=12,
      pointsize=12,
      res=600,# dpi,
      family="Arial")
-egg::tag_facet(p,open = "",close = "",tag_pool = letters[1:2])
+egg::tag_facet(p,open = "",close = "",tag_pool = letters[1:2]) %>% print()
 dev.off()
 # table -------------------------------------------------------------------------
 # p <-

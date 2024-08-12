@@ -125,16 +125,16 @@ p <-
   guides(fill=guide_legend(title=parse(text="BP[trait]")))
 
 
-png(filename="figure/Fig8.png",
+tiff(filename="figure/Fig8.tiff",
     type="cairo",
     units="cm",
-    # compression = "lzw",
+    compression = "lzw",
     width=12,
     height=10,
     pointsize=12,
     res=600,# dpi,
     family="Arial")
-p
+p %>% print()
 dev.off()
 
 # coef -------------------------------------------------------------------------

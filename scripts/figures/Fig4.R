@@ -133,14 +133,15 @@ p <- sdf%>%
   ylab(parse(text='italic(R)[sma]^2'))
 
 
-png(filename="figure/Fig4.png",
+tiff(filename="figure/Fig4.tiff",
     type="cairo",
     units="cm",
+    compress="lzw",
     width=16,
     height=10,
     pointsize=12,
     res=600,# dpi,
     family="Arial")
-p
+p %>% print()
 dev.off()
 

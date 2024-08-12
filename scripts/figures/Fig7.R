@@ -136,14 +136,15 @@ p <- s_window_statistic%>%
              # stickylabeller::label_glue('({.L}) {abbrev} {unit}\n{cvnam}')
   )
 # p
-png(filename="figure/Fig7.png",
+tiff(filename="figure/Fig7.tiff",
     type="cairo",
     units="cm",
+    compress="lzw",
     width=20,
     height=22,
     pointsize=5,
     res=650,# dpi,
     family="Arial")
-p
+p %>% print()
 dev.off()
 
