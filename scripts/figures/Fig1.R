@@ -29,24 +29,30 @@ locations_2 <- locations %>%
 ## Map
 fig1 <- 
   suppressMessages(
-  ggplot() +
-  theme_map() + 
-  theme(
-    panel.background = element_rect(fill = "dodgerblue3",
-                                    colour = "transparent", linewidth = 0.25),
-    ) +
-  geom_sf(data = ctrys, aes(fill = fill), colour = "black", size = 0.25) +
-  geom_sf_label_repel(data = locations_1, fill = "white", size = 3, aes(label = Location), nudge_x = 2, label.r = unit(0, "lines")) +
-  geom_sf_label_repel(data = locations_2, fill = "white", size = 3, aes(label = Location), nudge_x = -2, label.r = unit(0, "lines")) +
-  geom_sf(data = locations, shape = 21, fill = "red3", size = 2.5, stroke = 0.5) +
-  coord_sf(xlim = c(-3, 23), ylim = c(43, 59)) +
-  scale_fill_identity()+
-  ggspatial::annotation_north_arrow(location = "tl", 
-                                    pad_x = unit(0.1, "in"), 
-                                    pad_y = unit(0.1, "in"),
-                                    style = ggspatial::north_arrow_nautical(fill = c("grey40", "white"),
-                                                                            line_col = "grey20")) )
+    ggplot() +
+      theme_map() + 
+      theme(
+        panel.background = element_rect(fill = "dodgerblue3",
+                                        colour = "transparent", linewidth = 0.25),
+      ) +
+      geom_sf(data = ctrys, aes(fill = fill), colour = "black", size = 0.25) +
+      geom_sf_label_repel(data = locations_1, fill = "white", size = 2.5, aes(label = Location), nudge_x = 2, label.r = unit(0, "lines")) +
+      geom_sf_label_repel(data = locations_2, fill = "white", size = 2.5, aes(label = Location), nudge_x = -2, label.r = unit(0, "lines")) +
+      geom_sf(data = locations, shape = 21, fill = "red3", size = 2.5, stroke = 0.5) +
+      coord_sf(xlim = c(-3, 23), ylim = c(43, 59)) +
+      ggspatial::annotation_scale( location = "bl",
+                                   # style="ticks",
+                                   pad_y = unit(0.15, "in"),
+                                   text_cex = 2.2)+
+      scale_fill_identity()+
+      ggspatial::annotation_north_arrow(location = "b", 
+                                        pad_x = unit(0.1, "in"), 
+                                        pad_y = unit(0.3, "in"),
+                                        width = unit(.3, "in"),height = unit(.3, "in"),
+                                        style = ggspatial::north_arrow_nautical(fill = c("grey40", "white"),
+                                                                                line_col = "grey20")) )
 
+# fig1
 # -------------------------------------------------------------------------
 soil<- xlsx::read.xlsx(file="data/soil.xlsx",stringsAsFactors=F,sheetIndex = 1) %>% 
   mutate(
@@ -79,11 +85,11 @@ process_data <- function(df) {
           yf <- yf%>% paste(.,collapse="-")
         }
         dff[1,] %>% dplyr::select(Location,Clay,Silt,Sand) %>% mutate(g=paste(Location,yf),
-                                                               year=yf)
+                                                                      year=yf)
       }else{
         yf <- dff$Year %>% substr(start = 3,stop = 4) 
         dff[1,] %>% dplyr::select(Location,Clay,Silt,Sand) %>% mutate(g=paste(Location,yf),
-                                                               year=yf)
+                                                                      year=yf)
         
       }
     })
@@ -97,60 +103,61 @@ db <- soil %>%process_data() %>%
   mutate(across(Clay:Sand,as.numeric)) %>% 
   na.omit()
 dbm <- db %>% group_by(Location) %>% summarise(across(Clay:Sand,mean))
-fig2 <- suppressMessages(ggplot(data = USDA, 
-               aes(
-                 y = Clay,
-                 x = Sand,
-                 z = Silt)) +
-  theme_bw()+
-  coord_tern(L = "x", T = "y", R = "z") +
-  geom_polygon(
-    aes(fill = Label),
-    alpha = 0.0,size = 0.5,
-    color = "black",show.legend = F) +
-  ggalt::geom_encircle(data = db %>% filter(Location%in%c("KIE","GGE")),
-                mapping=aes(color=Location),size=1,alpha=.5, expand=.02,spread=0.001) +
-  geom_text(data = USDA_text,
-            mapping=aes( 
-              label = Label),
-            color = 'darkgray',alpha=.7,fontface="bold",size = 2) +
-  geom_point(
-    data = db,
-    mapping=aes( 
-      color=Location),
-    size=1,shape=1,stroke=.5) +
-  theme_showarrows() +
-  labs(yarrow = "clay (%)",
-       zarrow = "silt (%)",
-       xarrow = "sand (%)") +
-  theme_clockwise() +
-  guides(fill=FALSE, color=FALSE)+
-  geom_text(
-    data = dbm,
-    mapping=aes(label=Location,color=Location),
-    size=2.2,fontface="bold",
-    hjust=+.1,vjust=-0.2,
-    show.legend = F
-  )+
-  geom_text(
-    data = db %>% filter(Location%in%c("KIE","GGE")),
-    mapping=aes(label=year,color=Location),
-    size=2.2,fontface="bold",show.legend = T,
-    hjust=+.1,vjust=-0.2
-  )+
-  theme(axis.title = element_blank()))
+fig2 <- suppressMessages(
+  ggplot(data = USDA, 
+         aes(
+           y = Clay,
+           x = Sand,
+           z = Silt)) +
+    theme_bw()+
+    coord_tern(L = "x", T = "y", R = "z") +
+    geom_polygon(
+      aes(fill = Label),
+      alpha = 0.0,size = 0.5,
+      color = "darkgray",show.legend = F) +
+    ggalt::geom_encircle(data = db %>% filter(Location%in%c("KIE","GGE")),
+                         mapping=aes(color=Location),size=1,alpha=.5, expand=.02,spread=0.001) +
+    geom_text(data = USDA_text,
+              mapping=aes( 
+                label = Label),
+              color = 'darkgray',alpha=.7,size = 1.75) +
+    geom_point(
+      data = db,
+      size=1,shape=1,stroke=.5) +
+    theme_showarrows() +
+    labs(yarrow = "clay (%)",
+         zarrow = "silt (%)",
+         xarrow = "sand (%)") +
+    theme_clockwise() +
+    guides(fill=FALSE, color=FALSE)+
+    geom_text(
+      data = dbm,
+      mapping=aes(label=Location,color=Location),
+      size=1.5,
+      hjust=+.2,vjust=-0.2,
+      show.legend = F
+    )+
+    geom_text(
+      data = db %>% filter(Location%in%c("KIE","GGE")),
+      mapping=aes(label=year),
+      size=1.5,show.legend = T,
+      hjust=+.15,vjust=1.2
+    )+
+    theme(axis.title = element_blank()))
+# grid.arrange(fig2)
 # -------------------------------------------------------------------------
 p <- cowplot::plot_grid(fig1,
                         grid.arrange(fig2),
                         nrow=1,labels = c("a","b"),rel_widths = c(.7,1.2),
                         align = "hv") %>% suppressWarnings()
 tiff(filename="figure/Fig1.tiff",
-    type="cairo",
-    units="cm",
-    width=16,
-    height=8, compress="lzw",
-    pointsize=3,
-    res=600,# dpi,
-    family="Arial")
+     type="cairo",
+     units="cm",
+     width=16,
+     height=8, compress="lzw",
+     pointsize=3,
+     res=600,# dpi,
+     family="Arial")
 p %>% print()
 dev.off()
+
