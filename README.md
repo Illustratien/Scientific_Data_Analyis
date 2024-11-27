@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![Zenodo-repository](https://img.shields.io/badge/Data-figshare-darkred)](https://figshare.com/s/db122743679926b81743)
+[![Figshare-repository](https://img.shields.io/badge/doi-10.6084/m9.figshare.27910269-darkred)](https://figshare.com/s/6182dd7384bef2dbd9d5)
 [![Website -
 pkgdown](https://img.shields.io/badge/data-visulaization-blue)](https://tillrose.github.io/BRIWECS_Data_Publication/data_overview.html)
 [![Project-website](https://img.shields.io/badge/Project-website-darkgreen)](https://www.igps.uni-hannover.de/de/forschung/forschungsprojekte/detailansicht/projects/forschungsverbund-briwecs)
@@ -24,8 +24,8 @@ Efficient Cropping Systems (BRIWECS).</figcaption>
 3.  run all `Ctrl + Alt + R`
 
 ***in case of data update, please visit
-<https://figshare.com/s/db122743679926b81743> and replace the file in
-folder data***
+[Github](https://github.com/tillrose/BRIWECS_Data_Publication) and
+replace the file in folder data***
 
 ## directory tree
 
